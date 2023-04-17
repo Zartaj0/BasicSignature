@@ -19,7 +19,6 @@ async function main() {
     `deployed to ${lock.address}`
   );
 
-  console.log(lock.abi);
 }
 
 // We recommend this pattern to be able to use async/await everywhere

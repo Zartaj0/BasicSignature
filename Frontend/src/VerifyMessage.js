@@ -3,7 +3,7 @@ import { ethers } from "ethers";
 import ErrorMessage from "./ErrorMessage";
 import SuccessMessage from "./SuccessMessage";
 
-const contractAddress = "0x3a75E4a093f70a232ef514B45C0b36b5Ce5835a7";
+const contractAddress = "0x5FbDB2315678afecb367f032d93F642f64180aa3";
 const abi = require("./abi.json")
 
 
@@ -25,7 +25,8 @@ const verifyMessage = async ({ message, address, signature }) => {
     // console.log(contract.address)
 
     let messageHash = await ethers.utils.hashMessage(message);
-
+console.log(messageHash);
+console.log(signature);
     const signerAddr = await contract.recoverSigner(messageHash,signature);
     console.log(signerAddr);
     console.log(messageHash);

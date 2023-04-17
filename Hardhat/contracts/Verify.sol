@@ -37,8 +37,8 @@ contract VerifySignature {
         bytes memory _signature
     ) public pure returns (address) {
         (bytes32 r, bytes32 s, uint8 v) = splitSignature(_signature);
-
-        return ecrecover(_ethSignedMessageHash, v, r, s);
+address signerRecoverd = ecrecover(_ethSignedMessageHash, v, r, s);
+        return signerRecoverd;
     }
 
     function splitSignature(
